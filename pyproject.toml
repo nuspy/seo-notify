@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seo-notify"
+version = "0.1.0"
+description = "Notifica ai motori di ricerca (IndexNow, WebSub) e alla Search Console quando un contenuto è pubblicato o aggiornato — libreria minimale, senza dipendenze pesanti, pensata per essere riusata in più progetti."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+# Solo per il canale Search Console (Google): richiede firma JWT di un service account.
+search-console = ["google-auth>=2.30", "google-api-python-client>=2.140"]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["seo_notify*"]
